@@ -31,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(fileUpload());
 
 app.post('/', upload.single('selectedFile'),(req, res) => {
-    console.log('pinged');
-    console.log(req.body);
+    //console.log('ping');
+    //console.log(req.body);
 
     Kyc_collection.create({
             Name:req.body.Name,
@@ -44,10 +44,10 @@ app.post('/', upload.single('selectedFile'),(req, res) => {
             Img:req.body.Img
     },function(err,newEntry){
         if(err){
-            console.log('error in adding new Entry');
+            console.log('error in adding new Entry' ,err);
             return;
         }
-        console.log(newEntry);
+        console.log("successfully added to database",newEntry);
         return res.redirect('back');
     })
       
