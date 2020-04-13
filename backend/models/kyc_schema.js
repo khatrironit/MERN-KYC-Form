@@ -25,7 +25,7 @@ const kyc_schema = new mongoose.Schema({
         type:String,
         required:true
     },
-    Image : {
+    Img : {
         type:String,
         required:true
     }
